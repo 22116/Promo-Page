@@ -1,0 +1,56 @@
+$bgMain: url("/storage/bg_header.jpg") no-repeat fixed;
+$bgMainMobile: url("/storage/bg_header.jpg") no-repeat 100%;
+
+.fill-horizontal {
+  width: 100%;
+}
+.fill-vertical {
+  height: 100%;
+}
+.content {
+  min-height: calc(100vh - 88px);
+}
+
+#header {
+  height: 100px;
+  background: $bgMain;
+  background-size: 100%;
+}
+
+#header a {
+  text-decoration: none;
+}
+
+.text-prepeared {
+  font-family: Roboto;
+};
+
+.wrapper-clear {
+  #header {
+    background: {
+      position-y: -400px;
+    };
+  }
+
+  footer {
+    background:  $bgMain;
+    background: {
+      position: bottom;
+    };
+  }
+}
+
+.wrapper-home {
+  background: $bgMain;
+  background-size: 100%;
+  .content {
+    min-height: calc(100vh - 32px);
+  }
+}
+
+@media screen and (max-device-width: 800px) {
+  #header, .wrapper-home {
+    background: $bgMainMobile;
+    background-position-y: 0;
+  }
+}
