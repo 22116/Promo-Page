@@ -5,12 +5,14 @@
     <div class="col-xl-2 d-inline mb-3">
         <div class="list-group">
             @foreach($sections as $section)
-                <a href="{{$section['href']}}" class="list-group-item @if ($section['active']) active @else list-group-item-action @endif">{{$section['text']}}</a>
+                <a href="{{$section->getHref()}}" class="list-group-item @if ($section->isActive()) active @else list-group-item-action @endif">{{$section->getText()}}</a>
             @endforeach
         </div>
     </div>
     <div class="col-xl-8 d-inline">
-        @yield('data')
+        @foreach($sections as $section)
+            @if ($section->isActive()) {{$section->getContent()}} @endif
+        @endforeach
     </div>
     <div class="col-xl-2 d-inline">
         <div class="card fill-horizontal">

@@ -3,29 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use University\LessonFactory;
+use Illuminate\Support\Collection;
+use App\Models\University\Lessons\PTLesson;
+
 
 class University extends Controller
 {
-	private $args = [
-		'sections' => [
-			['name' => 'description', 'href' => '#', 'text' => 'Description', 'active' => false],
-			['name' => 'data',        'href' => '#', 'text' => 'Data',        'active' => false],
-			['name' => 'result',      'href' => '#', 'text' => 'Result',      'active' => false]
-		],
-		'title' => 'Lab'
-	];
+	private $args;
 
 	public function __construct()
 	{
 		$this->middleware('university');
+
+		$this->args = new Collection();
 	}
 
 	public function lab(Request $request, $lesson, $number, $currentSection = 'description')
 	{
-		foreach ($this->args['sections'] as &$section) {
-			$section['active'] = $section['name'] == $currentSection;
-			$section['href'] = $request->route()->getPrefix() . '/' . $lesson . '/' . $number . '/' . $section['name'];
+		$Lesson = new PTLesson();
+		$Lesson->setUrlBasePath($request->route()->getPrefix() . '/' . $lesson . '/' . $number, $currentSection);
+		foreach ($Lesson->getLabs() as $lab) {
+			$this->args = $this->args->merge(['sections' => $lab->getSections()]);
+			$this->args->put('title', $lab->getTitle());
 		}
 
 		return view('university.lab', $this->args);

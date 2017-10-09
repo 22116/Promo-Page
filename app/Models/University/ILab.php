@@ -1,6 +1,6 @@
 <?php
 
-namespace University;
+namespace App\Models\University;
 
 use Illuminate\Support\Collection;
 
@@ -8,5 +8,5 @@ interface ILab
 {
 	public function getSections() :Collection;
 	public function getTitle() :string;
-	public function getId() :int;
+	public function getIdentifier() :string;
 }
