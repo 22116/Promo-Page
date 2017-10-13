@@ -9,6 +9,7 @@ use App\Models\University\Section;
 class CheckHypothesisLab extends BaseLab
 {
 	public function getTitle() :string       { return 'Check hypothesis for descrete parameters'; }
+	public function getLessonIdentifier() :string { return 'probabilitytheory'; }
 	public function getIdentifier() :string  { return 1; }
 	public function getSections():Collection
 	{

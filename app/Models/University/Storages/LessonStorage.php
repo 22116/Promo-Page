@@ -1,12 +1,36 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Victor
- * Date: 10/9/17
- * Time: 1:14 PM
- */
 
-class LessonStorage
+namespace App\Models\University\Storages;
+
+use Illuminate\Support\Collection;
+use FilesystemIterator;
+
+class LessonStorage implements IStorage
 {
+	private $lessons;
 
+	public function __construct()
+	{
+		$this->lessons = new Collection();
+
+		foreach (new FilesystemIterator(__DIR__ . '/../Lessons') as $dir) {
+			foreach (new FilesystemIterator($dir) as $file) {
+				if ($file->isFile()) {
+					$lesson = 'App\\Models\\University\\Lessons\\' . substr($file->getFileName(), 0, strlen($file->getFileName()) - 4);
+					$lesson = new $lesson();
+					$this->lessons->push($lesson);
+				}
+			}
+		}
+	}
+
+	public function fetch() :Collection
+	{
+		return $this->lessons;
+	}
+
+	public function fetchByParentId(string $id): Collection
+	{
+		return $this->lessons;
+	}
 }

@@ -3,8 +3,6 @@
 namespace App\Models\University;
 
 use Illuminate\Support\Collection;
-use FilesystemIterator;
-use ReflectionClass;
 use Exception;
 
 abstract class BaseLesson implements ILesson
@@ -14,11 +12,11 @@ abstract class BaseLesson implements ILesson
 	public function __construct()
 	{
 		$this->labs = new Collection();
+	}
 
-		foreach (new FilesystemIterator(dirname((new ReflectionClass(static::class))->getFileName()) . '/Labs') as $file) {
-			$lab = 'App\\Models\\University\\Lessons\\Labs\\' . substr($file->getFileName(), 0, strlen($file->getFileName()) - 4);
-			$this->labs->push(new $lab());
-		}
+	public function setLabs(Collection $labs)
+	{
+		$this->labs = $labs;
 	}
 
 	public function addLab(ILab $lab): void
@@ -31,9 +29,8 @@ abstract class BaseLesson implements ILesson
 		if($this->labs->has($id)) {
 			return $this->labs->get($id);
 		}
-		else {
-			throw new Exception('Undefined lab ID.');
-		}
+
+		throw new Exception('Undefined lab ID.');
 	}
 
 	public function getLabs(): Collection { return $this->labs; }
