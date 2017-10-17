@@ -29,6 +29,12 @@
                 </div>
                 <div class="col-10"></div>
             </div>
+            <div class="row mt-2">
+                <div class="col">
+                    {{ Breadcrumbs::render(\Illuminate\Support\Facades\Route::getCurrentRoute()->getName(), Route::getCurrentRoute()->parameters()) }}
+                </div>
+
+            </div>
             <div class="row mt-4">
                 @yield('content')
             </div>

@@ -13,14 +13,10 @@ class LessonStorage implements IStorage
 	{
 		$this->lessons = new Collection();
 
-		foreach (new FilesystemIterator(__DIR__ . '/../Lessons') as $dir) {
-			foreach (new FilesystemIterator($dir) as $file) {
-				if ($file->isFile()) {
-					$lesson = 'App\\Models\\University\\Lessons\\' . substr($file->getFileName(), 0, strlen($file->getFileName()) - 4);
-					$lesson = new $lesson();
-					$this->lessons->push($lesson);
-				}
-			}
+		foreach (new FilesystemIterator(__DIR__ . '/../Lessons') as $file) {
+			$lesson = 'App\\Models\\University\\Lessons\\' . substr($file->getFileName(), 0, strlen($file->getFileName()) - 4);
+			$lesson = new $lesson();
+			$this->lessons->push($lesson);
 		}
 	}
 

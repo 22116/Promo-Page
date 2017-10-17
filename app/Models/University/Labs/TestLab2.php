@@ -6,11 +6,11 @@ use Illuminate\Support\Collection;
 use App\Models\University\BaseLab;
 use App\Models\University\Section;
 
-class CheckHypothesisLab extends BaseLab
+class TestLab2 extends BaseLab
 {
 	public function getTitle() :string       { return 'Check hypothesis for descrete parameters'; }
-	public function getLessonIdentifier() :string { return 'probabilitytheory'; }
-	public function getIdentifier() :string  { return 1; }
+	public function getParentIdentifier() :string { return 'test'; }
+	public function getIdentifier() :string  { return 2; }
 	public function getSections():Collection
 	{
 		return new Collection([

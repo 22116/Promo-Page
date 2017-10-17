@@ -13,16 +13,10 @@ class LabStorage implements IStorage
 	{
 		$this->labs = new Collection();
 
-		foreach (new FilesystemIterator(__DIR__ . '/../Lessons') as $dir) {
-			foreach (new FilesystemIterator($dir) as $lessonDir) {
-				if($lessonDir->isDir()) {
-					foreach (new FilesystemIterator($lessonDir) as $file) {
-						$lab = 'App\\Models\\University\\Lessons\\Labs\\' . substr($file->getFileName(), 0, strlen($file->getFileName()) - 4);
-						$lab = new $lab();
-						$this->labs->push($lab);
-					}
-				}
-			}
+		foreach (new FilesystemIterator(__DIR__ . '/../Labs') as $file) {
+			$lab = 'App\\Models\\University\\Lessons\\Labs\\' . substr($file->getFileName(), 0, strlen($file->getFileName()) - 4);
+			$lab = new $lab();
+			$this->labs->push($lab);
 		}
 	}
 
@@ -34,7 +28,7 @@ class LabStorage implements IStorage
 	public function fetchByParentId(string $id): Collection
 	{
 		return $this->labs->filter(function ($lab) use ($id) {
-			return $lab->getLessonIdentifier() == $id;
+			return $lab->getParentIdentifier() == $id;
 		});
 	}
 }

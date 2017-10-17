@@ -22,10 +22,10 @@ class LessonMapper
 
 		$this->lessons = $this->lessonStorage->fetch();
 
-		$this->initLessons();
+		$this->initLabs();
 	}
 
-	private function initLessons() :void
+	private function initLabs() :void
 	{
 		foreach ($this->lessons as $lesson) {
 			$labsData = $this->labStorage->fetchByParentId($lesson->getIdentifier());
@@ -53,5 +53,17 @@ class LessonMapper
 		return $this->lessons->filter(function ($lesson) use ($id) {
 			return $lesson->getIdentifier() == $id;
 		})->first();
+	}
+
+	public function serialize() :Collection
+	{
+		$lessons = new Collection();
+		foreach ($this->lessons as $lesson) {
+			$lessons[$lesson->getIdentifier()] = new Collection();
+			foreach ($lesson->getLabs() as $lab) {
+				$lessons[$lesson->getIdentifier()]->push($lab->getIdentifier());
+			}
+		}
+		return $lessons;
 	}
 }

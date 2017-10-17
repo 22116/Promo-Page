@@ -4,25 +4,25 @@
 @section('content')
     <div class="container">
         <div id="accordion" role="tablist">
-            <div class="card">
-                <div class="card-header" role="tab" id="headingOne">
-                    <h5 class="mb-0">
-                        <a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                            Probability Theory
-                        </a>
-                    </h5>
-                </div>
+            @foreach($lessons as $key => $lesson)
+                <div class="card">
+                    <div class="card-header" role="tab" id="headingOne">
+                        <h5 class="mb-0">
+                            <a data-toggle="collapse" href="#collapse{{$key}}" aria-expanded="true" aria-controls="collapse{{$key}}">
+                                {{$lesson['title']}}
+                            </a>
+                        </h5>
+                    </div>
 
-                <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
-                    <div class="card-body">
-                        <span class="badge badge-success">1</span>
-                        <span class="badge badge-success">2</span>
-                        <span class="badge badge-success">3</span>
-                        <span class="badge badge-success">4</span>
-                        <span class="badge badge-secondary">5</span>
+                    <div id="collapse{{$key}}" class="collapse @if ($key == 0) show @endif" role="tabpanel" aria-labelledby="heading{{$key}}" data-parent="#accordion">
+                        <div class="card-body">
+                            @foreach($lesson['labs'] as $lab)
+                                <a href="{{$lab['href']}}" class="badge badge-success">{{$lab['number']}}</a>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
     </div>
 @endsection

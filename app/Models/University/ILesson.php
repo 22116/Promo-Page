@@ -4,7 +4,7 @@ namespace App\Models\University;
 
 use Illuminate\Support\Collection;
 
-interface ILesson
+interface ILesson extends IIdentifiable
 {
 	public function getLabs() :Collection;
 	public function setLabs(Collection $labs);

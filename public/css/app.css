@@ -9198,42 +9198,113 @@ a.text-dark:hover {
   min-height: calc(100vh - 88px);
 }
 
-#header {
-  height: 100px;
-  background: url("/storage/bg_header.jpg") no-repeat fixed;
-  background-size: 100%;
-}
-
-#header a {
-  text-decoration: none;
-}
-
 .text-prepeared {
   font-family: Roboto;
 }
 
+.undecorated {
+  text-decoration: none;
+}
+
+.undecorated:hover {
+  text-decoration: none;
+}
+
 .wrapper-clear #header {
+  height: 100px;
+  background: url("/storage/bg_header.jpg") repeat fixed;
   background-position-y: -400px;
 }
 
+.wrapper-clear #header a {
+  text-decoration: none;
+}
+
 .wrapper-clear footer {
-  background: url("/storage/bg_header.jpg") no-repeat fixed;
+  background: url("/storage/bg_header.jpg") repeat fixed;
   background-position: bottom;
 }
 
 .wrapper-home {
-  background: url("/storage/bg_header.jpg") no-repeat fixed;
-  background-size: 100%;
+  background: url("/storage/bg_header.jpg") repeat fixed;
+}
+
+.wrapper-home #projects a {
+  color: black;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.wrapper-home #projects a:hover {
+  text-decoration: none;
+  background-color: aliceblue;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+}
+
+.wrapper-home #particles-js {
+  position: absolute;
+  width: 100%;
+  min-height: 100%;
+}
+
+.wrapper-home #particles-js canvas {
+  position: inherit;
 }
 
 .wrapper-home .content {
+  position: relative;
   min-height: calc(100vh - 32px);
+}
+
+.icon,
+.icon-bg {
+  display: block;
+  margin: 0 auto;
+  width: 90px;
+  height: 90px;
+  border: 4px solid white;
+  border-radius: 100%;
+  background-size: 100%;
+}
+
+.icon-bg {
+  width: 200px;
+  height: 200px;
+  border: 4px solid darkblue;
+  padding: 2px;
+}
+
+.icon-avatar {
+  background-image: url("/storage/icon_avatar.jpg");
+  background-size: 170%;
+  background-position-x: -60px;
+}
+
+.icon-fb {
+  background-image: url("/storage/icon_fb.png");
+}
+
+.icon-tm {
+  background-image: url("/storage/icon_tm.png");
+}
+
+.icon-ln {
+  background-image: url("/storage/icon_ln.png");
+}
+
+.icon-hb {
+  background-image: url("/storage/icon_hb.png");
+}
+
+.icon-ml {
+  background-image: url("/storage/icon_ml.png");
 }
 
 @media screen and (max-device-width: 800px) {
   #header,
   .wrapper-home {
-    background: url("/storage/bg_header.jpg") no-repeat 100%;
+    background: url("/storage/bg_header.jpg") repeat 100%;
     background-position-y: 0;
   }
 }

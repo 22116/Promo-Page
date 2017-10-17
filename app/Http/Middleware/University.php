@@ -2,12 +2,13 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\University\Mappers\LessonMapper;
+use App\Models\University\Storages\LabStorage;
+use App\Models\University\Storages\LessonStorage;
 use Closure;
 
 class University
 {
-	private $lessons = ['probabilitytheory', 'programming'];
-
     /**
      * Handle an incoming request.
      *
@@ -17,10 +18,24 @@ class University
      */
     public function handle($request, Closure $next)
     {
-    	if (
-    		!in_array(strtolower($request->lesson), $this->lessons) && isset($request->lesson) ||
-		    !is_numeric($request->number) && isset($request->number)
-	    ) {
+	    $lessonMapper = new LessonMapper(new LessonStorage(), new LabStorage());
+	    $lessons = $lessonMapper->serialize();
+
+	    if(isset($request->lesson)) {
+		    foreach ($lessons as $lesson => $labs) {
+			    if (strtolower($request->lesson) == $lesson) {
+			    	if(isset($request->number)) {
+					    foreach ($labs as $lab) {
+							if ($request->number == $lab) {
+								return $next($request);
+							}
+					    }
+				    }
+				    else {
+			    		return $next($request);
+				    }
+			    }
+		    }
 		    abort(404);
 	    }
 
