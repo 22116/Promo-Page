@@ -1,5 +1,5 @@
-$bgMain: url("/storage/bg_header.jpg") repeat fixed;
-$bgMainMobile: url("/storage/bg_header.jpg") repeat 100%;
+$bgMain: url("../../images/bg_header.jpg") repeat fixed;
+$bgMainMobile: url("../../images/bg_header.jpg") repeat 100%;
 
 .fill-horizontal {
   width: 100%;
@@ -10,10 +10,6 @@ $bgMainMobile: url("/storage/bg_header.jpg") repeat 100%;
 .content {
   min-height: calc(100vh - 88px);
 }
-
-.text-prepeared {
-  font-family: Roboto;
-};
 
 .undecorated {
   text-decoration: none;
@@ -92,29 +88,29 @@ $bgMainMobile: url("/storage/bg_header.jpg") repeat 100%;
 }
 
 .icon-avatar {
-  background-image: url("/storage/icon_avatar.jpg");
+  background-image: url("../../images/icon_avatar.jpg");
   background-size: 170%;
   background-position-x: -60px;
 }
 
 .icon-fb {
-  background-image: url("/storage/icon_fb.png");
+  background-image: url("../../images/icon_fb.png");
 }
 
 .icon-tm {
-  background-image: url("/storage/icon_tm.png");
+  background-image: url("../../images/icon_tm.png");
 }
 
 .icon-ln {
-  background-image: url("/storage/icon_ln.png");
+  background-image: url("../../images/icon_ln.png");
 }
 
 .icon-hb {
-  background-image: url("/storage/icon_hb.png");
+  background-image: url("../../images/icon_hb.png");
 }
 
 .icon-ml {
-  background-image: url("/storage/icon_ml.png");
+  background-image: url("../../images/icon_ml.png");
 }
 
 @media screen and (max-device-width: 800px) {

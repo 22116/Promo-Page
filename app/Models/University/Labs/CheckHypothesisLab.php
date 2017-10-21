@@ -6,9 +6,14 @@ use App\Models\Database\HlPation;
 use Illuminate\Support\Collection;
 use App\Models\University\BaseLab;
 use App\Models\University\Section;
+use MathPHP\Probability\Distribution\Discrete;
+use MathPHP\Probability\Distribution\Continuous;
+use MathPHP\Statistics\RandomVariable;
 
 class CheckHypothesisLab extends BaseLab
 {
+	private $alpha = 0.1;
+
 	public function getTitle() :string       { return 'Check hypothesis for descrete parameters'; }
 	public function getParentIdentifier() :string { return 'probabilitytheory'; }
 	public function getIdentifier() :string  { return 1; }
@@ -23,14 +28,14 @@ class CheckHypothesisLab extends BaseLab
 
 	private function constructDescription() :string
 	{
-		return '<p><b>Перевірка гіпотез про ймовірність для дискретних параметрів (4 варіант)</b></p>
+		return '<p><b>Перевірка гіпотез про ймовірність для дискретних параметрів (1 варіант)</b></p>
 				<p>Однією із задач первинного аналізу даних є задача отримання статистичних висновків про параметри розподілу. 
 				При цьому аналіз параметрів розподілу дискретних змінних (параметрів) за допомогою таблиць частот є окремим напрямом дослідження. 
 				Якщо неперервні змінні завжди є кількісними і вимірюються в інтервальній шкалі або в шкалі відносин, маючи деяку одиницю виміру, 
 				то дискретні змінні одиниці виміру не мають. Для вимірювання таких змінних використовують одну з двох шкал – шкалу найменувань або порядкову шкалу. 
 				Метою даної лабораторної роботи є освоєння методів отримання висновків стосовно гіпотез про ймовірність при аналізі випадкових величин, які вимірюються в шкалі найменувань.</p>
-				<p>Перевірити гіпотезу про те, що кількість хворих, що надійшли на обстеження, зі значенням Hct більшим і меншим 40 в досліджуваній сукупності, наведеній в табл. A.1, A.2, 
-				є однаковою. Побудувати 95 % й довірчий інтервал. Використати біноміальний закон розподі¬лу, z-кри¬терій і критерій χ2.</p>';
+				<p>Перевірити гіпотезу про те, що кількість чоловіків і жінок у досліджуваній сукупності, наведеній в табл. A.1, A.2, однакова. Побудувати 95 % й довірчий інтервал. 
+				Використати біноміальний закон розподілу, z-критерій і критерій χ2.</p>';
 	}
 
 	private function constructData() :string
@@ -91,6 +96,33 @@ class CheckHypothesisLab extends BaseLab
 
 	private function constructResult() :string
 	{
-		return 'result';
+		$string = '';
+		$peoples = [
+			'mans' => HlPation::all()->filter(function (HlPation $pation) {
+				return $pation->sex->name == 'Man';
+			})->count(),
+			'womans' => HlPation::all()->filter(function (HlPation $pation) {
+				return $pation->sex->name == 'Woman';
+			})->count()
+		];
+		$string .= '<table class="table table-responsive table-striped" style="width: auto; width: 100%">
+					<thead><tr>
+						<th></th>
+						<th class="col-xl-1">Mans</th>
+						<th class="col-xl-1">Womans</th>
+					</tr></thead>
+					<tr>
+						<th>Count</th>
+						<td>'.$peoples['mans'].'</td>
+						<td>'.$peoples['womans'].'</td>
+					</table>';
+		$string .= '<p><b>H<sub>0</sub></b> = 1/2</p>';
+		$string .= '<p class="h4">Binomial</p>';
+		$string .= '<p>'.Discrete\Binomial::cdf(HlPation::all()->count()/100, min($peoples['womans'], $peoples['mans'])/100, 1/2).'</p>';
+		$string .= '<p class="h4">ChiSquared</p>';
+		$string .= '<p>'.Continuous\ChiSquared::pdf(HlPation::all()->count(), $peoples['womans']).'</p>';
+		$string .= '<p class="h4">Confidence interval</p>';
+		$string .= '<p>'.var_export(RandomVariable::confidenceInterval(1,2,3,99), true).'</p>';
+		return $string;
 	}
 }

@@ -1,4 +1,5 @@
 @extends('layouts.default')
+@section('title', 'Curriculum Vitae - Victor Fedorenko')
 @section('content')
     <div class="row px-2 pt-4">
         <div class="col">
