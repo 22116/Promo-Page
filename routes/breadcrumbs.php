@@ -20,5 +20,5 @@ Breadcrumbs::register('lesson', function ($breadcrumbs, $params) {
 // Home -> University -> {lesson} -> {lab}
 Breadcrumbs::register('lab', function ($breadcrumbs, $params) {
 	$breadcrumbs->parent('lesson', ['lesson' => $params['lesson']]);
-	$breadcrumbs->push($params['number'], route('lab', ['lesson' => $params['lesson'], 'number' => $params['number']]));
+	$breadcrumbs->push(ucfirst($params['number']), route('lab', ['lesson' => $params['lesson'], 'number' => $params['number']]));
 });

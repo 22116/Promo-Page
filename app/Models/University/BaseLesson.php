@@ -24,7 +24,7 @@ abstract class BaseLesson implements ILesson
 		$this->labs->push($lab);
 	}
 
-	public function getLab(int $id): ILab
+	public function getLab(string $id): ILab
 	{
 		if($this->labs->has($id)) {
 			return $this->labs->get($id);

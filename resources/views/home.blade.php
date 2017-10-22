@@ -10,8 +10,7 @@
                 <div class="col-lg-9">
                     <p class="h3">Hello, my name is Victor!</p>
                     <p class="ml-3">
-                            I'm a  19 years old web-developer. Living Kharkiv. Studying in National Technical University "Kharkiv Polytechnic Institute" from 2015.
-                        Programming for myself about 3-4 years, mostly on C#. Switched to web-development about year ago.
+                        I'm a 19yo web-developer, student of National Technical University "Kharkiv Polytechnic Institute" since 2015. Currently living in Kharkiv. Programming for 4 years, mostly on C#. Switched to web-development a year ago.
                     </p>
                     <p>
                         Current postion: <b>ABC Hosting Company Ltd</b> since 21.11.2016
@@ -38,7 +37,7 @@
                         <span class="badge badge-primary">English(Intermediate)</span>
                     </p>
 
-                    <p>I am interested in new technologies and own skill improvement.</p>
+                    <p>I am interested in improving of my own skills and discovering new technologies</p>
                 </div>
             </div>
         </div>

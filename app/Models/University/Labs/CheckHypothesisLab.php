@@ -16,7 +16,7 @@ class CheckHypothesisLab extends BaseLab
 
 	public function getTitle() :string       { return 'Check hypothesis for descrete parameters'; }
 	public function getParentIdentifier() :string { return 'probabilitytheory'; }
-	public function getIdentifier() :string  { return 1; }
+	public function getIdentifier() :string  { return 'checkhypothesis'; }
 	public function getSections():Collection
 	{
 		return new Collection([
