@@ -9,6 +9,8 @@
         @yield('title')
     </title>
 
+    <!-- Font -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
     <!-- Icon -->
     <link rel="shortcut icon" href="/images/icon.ico" type="image/x-icon">
     <!-- Styles -->

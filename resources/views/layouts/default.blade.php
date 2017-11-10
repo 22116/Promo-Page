@@ -3,14 +3,7 @@
 @section('layout')
 <div class="wrapper-home">
     <div class="content">
-        <div id="particles-js"></div>
-        <div class="container-fluid fill-vertical">
-            <div class="row justify-content-center align-content-center">
-                <div id="content" class="col-10 my-5 bg-white">
-                    @yield('content')
-                </div>
-            </div>
-        </div>
+        @yield('content')
     </div>
     <footer class="py-1" style="background-color: #212529">
         <div class="container">

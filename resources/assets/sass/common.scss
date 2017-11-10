@@ -1,121 +1,158 @@
 $bgMain: url("../../images/bg_header.jpg") repeat fixed;
 $bgMainMobile: url("../../images/bg_header.jpg") repeat 100%;
 
+html {
+     font-family: Roboto, sans-serif !important;
+}
+
 .fill-horizontal {
-  width: 100%;
+     width: 100%;
 }
 .fill-vertical {
-  height: 100%;
+     height: 100%;
 }
 .content {
-  min-height: calc(100vh - 88px);
+     min-height: calc(100vh - 88px);
 }
 
 .undecorated {
-  text-decoration: none;
+     text-decoration: none;
 }
 .undecorated:hover {
-  text-decoration: none;
+     text-decoration: none;
 }
 
 .wrapper-clear {
-  #header {
-    height: 100px;
-    background: $bgMain;
-    background: {
-      position-y: -400px;
-    };
-  }
+     #header {
+          height: 100px;
+          background: $bgMain;
+          background: {
+               position-y: -400px;
+          };
+     }
 
-  #header a {
-    text-decoration: none;
-  }
+     #header a {
+          text-decoration: none;
+     }
 
-  footer {
-    background:  $bgMain;
-    background: {
-      position: bottom;
-    };
-  }
+     footer {
+          background:    $bgMain;
+          background: {
+               position: bottom;
+          };
+     }
 }
 
 .wrapper-home {
-  background: $bgMain;
+     #promo {
+          position: relative;
+          height: 100vh;
+          background: #000 url("../../images/promo_bg.jpeg") no-repeat fixed;
+          background-size: 100% 100%;
+          z-index: -2;
 
-  #projects {
-    a {
-      color: black;
-      transition: background-color 0.2s;
-    }
-    a:hover {
-      text-decoration: none;
-      background-color: aliceblue;
-      transition: background-color 0.2s;
-    }
-  }
+          .fg-promo {
+               position: fixed;
+               background: url("../../images/promo_fg.png") no-repeat;
+               background-attachment: inherit;
+               background-size: 100% 100%;
+               height: inherit;
+               width: 100%;
+          }
+          .container-fluid {
+               position: fixed;
+               height: inherit;
 
-  #particles-js {
-    position: absolute;
-    width: 100%;
-    min-height: 100%;
-    canvas {
-      position: inherit;
-    }
-  }
+               .h1 {
+                    font-family: Roboto, sans-serif;
+                    border-bottom: 1px solid white;
+                    display: block;
+                    font-size: 64pt;
+                    font-weight: 200;
+               }
 
-  .content {
-    position: relative;
-    min-height: calc(100vh - 32px);
-  }
+               .h4 {
+                    font-weight: 100;
+               }
+          }
+     }
+
+     #skills {
+          z-index: 100;
+          min-height: 100vh;
+          //box-shadow: 10px 10px 5px grey;
+     }
+
+     #projects {
+          a {
+               color: black;
+               transition: background-color 0.2s;
+          }
+          a:hover {
+               text-decoration: none;
+               background-color: aliceblue;
+               transition: background-color 0.2s;
+          }
+     }
+
+     #particles-js {
+          position: fixed;
+          width: 100%;
+          height: 100%;
+
+          canvas {
+               position: inherit;
+          }
+     }
 }
 
 .icon {
-  display: block;
-  margin: 0 auto;
-  width: 90px;
-  height: 90px;
-  border: 4px solid white;
-  border-radius: 100%;
-  background-size: 100%;
+     display: block;
+     margin: 0 auto;
+     width: 90px;
+     height: 90px;
+     border: 4px solid white;
+     border-radius: 100%;
+     background-size: 100%;
 }
 
 .icon-bg {
-  @extend .icon;
-  width: 200px;
-  height: 200px;
-  border: 4px solid darkblue;
-  padding: 2px;
+     @extend .icon;
+     width: 200px;
+     height: 200px;
+     border: 4px solid darkblue;
+     padding: 2px;
 }
 
 .icon-avatar {
-  background-image: url("../../images/icon_avatar.jpg");
-  background-size: 170%;
-  background-position-x: -60px;
+     background-image: url("../../images/icon_avatar.jpg");
+     background-size: 170%;
+     background-position-x: -60px;
 }
 
 .icon-fb {
-  background-image: url("../../images/icon_fb.png");
+     background-image: url("../../images/icon_fb.png");
 }
 
 .icon-tm {
-  background-image: url("../../images/icon_tm.png");
+     background-image: url("../../images/icon_tm.png");
 }
 
 .icon-ln {
-  background-image: url("../../images/icon_ln.png");
+     background-image: url("../../images/icon_ln.png");
 }
 
 .icon-hb {
-  background-image: url("../../images/icon_hb.png");
+     background-image: url("../../images/icon_hb.png");
 }
 
 .icon-ml {
-  background-image: url("../../images/icon_ml.png");
+     background-image: url("../../images/icon_ml.png");
 }
 
 @media screen and (max-device-width: 800px) {
-  #header, .wrapper-home {
-    background: $bgMainMobile;
-    background-position-y: 0;
-  }
+     #header, .wrapper-home {
+          background: $bgMainMobile;
+          background-position-y: 0;
+     }
 }
