@@ -1,4 +1,4 @@
-/*!
+@import url(https://fonts.googleapis.com/css?family=Roboto);/*!
  * Bootstrap v4.0.0-beta (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
  * Copyright 2011-2017 Twitter, Inc.
@@ -9191,16 +9191,8 @@ a.text-dark:hover {
   visibility: hidden !important;
 }
 
-html {
+body {
   font-family: Roboto, sans-serif !important;
-}
-
-.fill-horizontal {
-  width: 100%;
-}
-
-.fill-vertical {
-  height: 100%;
 }
 
 .content {
@@ -9233,18 +9225,31 @@ html {
 .wrapper-home #promo {
   position: relative;
   height: 100vh;
-  background: #000 url(/images/promo_bg.jpeg?431562b3b627a33b04ca71effe4adaa1) no-repeat fixed;
+  background: #000 url(/images/promo_bg.jpeg?a8d13243bfd409e50b4716b733acfc1f) no-repeat fixed;
   background-size: 100% 100%;
   z-index: -2;
 }
 
+@media screen and (max-device-width: 576px) {
+  .wrapper-home #promo {
+    background: url(/images/bg_header.jpg?3176e1e57ae61410a843300b41f6e62d) repeat fixed;
+    height: 400px;
+  }
+}
+
 .wrapper-home #promo .fg-promo {
   position: fixed;
-  background: url(/images/promo_fg.png?b432527ddca81df4ab24f2da834e21d7) no-repeat;
+  background: url(/images/promo_fg.png?f3a4d5ce93135317a1708042eb4fa53c) no-repeat;
   background-attachment: inherit;
   background-size: 100% 100%;
   height: inherit;
   width: 100%;
+}
+
+@media screen and (max-device-width: 576px) {
+  .wrapper-home #promo .fg-promo {
+    display: none;
+  }
 }
 
 .wrapper-home #promo .container-fluid {
@@ -9252,34 +9257,71 @@ html {
   height: inherit;
 }
 
-.wrapper-home #promo .container-fluid .h1 {
-  font-family: Roboto, sans-serif;
+.wrapper-home #promo .container-fluid h1 {
   border-bottom: 1px solid white;
   display: block;
   font-size: 64pt;
-  font-weight: 200;
+  font-weight: 100;
 }
 
-.wrapper-home #promo .container-fluid .h4 {
+@media screen and (max-device-width: 576px) {
+  .wrapper-home #promo .container-fluid h1 {
+    font-size: 24pt;
+  }
+}
+
+.wrapper-home #promo .container-fluid h4 {
   font-weight: 100;
 }
 
 .wrapper-home #skills {
-  z-index: 100;
-  min-height: 100vh;
+  display: block;
+  -webkit-box-shadow: 10px 10px grey;
+          box-shadow: 10px 10px grey;
 }
 
-.wrapper-home #projects a {
+.wrapper-home #skills #projects a {
   color: black;
   -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
 }
 
-.wrapper-home #projects a:hover {
+.wrapper-home #skills #projects a:hover {
   text-decoration: none;
   background-color: aliceblue;
   -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
+}
+
+.wrapper-home #source {
+  background: #00b3ee url(/images/gh_code.jpg?601465869e1b087b9b7665fc1eac1f96) no-repeat fixed;
+  background-size: cover;
+}
+
+.wrapper-home #source .container {
+  padding: 100px 0;
+}
+
+.wrapper-home #source .container h3 {
+  border-bottom: 1px solid white;
+  display: block;
+  font-size: 28pt;
+  font-weight: 100;
+}
+
+.wrapper-home #source .container h4 {
+  font-weight: 100;
+}
+
+.wrapper-home #contacts h3 {
+  border-bottom: 1px solid white;
+  display: block;
+  font-size: 28pt;
+  font-weight: 100;
+}
+
+.wrapper-home #contacts h4 {
+  font-weight: 100;
 }
 
 .wrapper-home #particles-js {
@@ -9294,8 +9336,8 @@ html {
 
 .icon,
 .icon-bg {
+  background-color: #fff;
   display: block;
-  margin: 0 auto;
   width: 90px;
   height: 90px;
   border: 4px solid white;
@@ -9334,13 +9376,5 @@ html {
 
 .icon-ml {
   background-image: url(/images/icon_ml.png?007695bf7630d4e5a39fc9fadf5b164e);
-}
-
-@media screen and (max-device-width: 800px) {
-  #header,
-  .wrapper-home {
-    background: url(/images/bg_header.jpg?3176e1e57ae61410a843300b41f6e62d) repeat 100%;
-    background-position-y: 0;
-  }
 }
 

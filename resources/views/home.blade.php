@@ -5,135 +5,89 @@
         <div id="particles-js"></div>
         <div class="fg-promo"></div>
         <div class="container-fluid">
-            <div class="row justify-content-center align-content-center fill-vertical text-white">
-                <div class="col-auto border-light h1">Victor Fedorenko</div>
+            <div class="row justify-content-center align-content-center h-100 text-white">
+                <h1 class="col-auto border-light h1">Victor Fedorenko</h1>
                 <div class="w-100"></div>
-                <div class="col-auto h4">Sleep -> Code -> Recursion</div>
+                <h4 class="col-auto h4">@php print(htmlspecialchars("<?php print(\"I'm ready!\"); ?>")) @endphp</h4>
             </div>
         </div>
     </div>
     <div id="skills" class="bg-white">
-        <div id="content" class="container">
-            <div class="row px-2 pt-4">
-                <div class="col">
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="icon-bg icon-avatar"></div>
-                        </div>
-                        <div class="col-lg-9">
-                            <p class="h3">Hello, my name is Victor!</p>
-                            <p class="ml-3">
-                                I'm a 19yo web-developer, student of National Technical University "Kharkiv Polytechnic Institute" since 2015. Currently living in Kharkiv. Programming for 4 years, mostly on C#. Switched to web-development a year ago.
-                            </p>
-                            <p>
-                                Current postion: <b>ABC Hosting Company Ltd</b> since 21.11.2016
-                            </p>
-                            <p>Skills: <span class="badge badge-success">Php 7.X</span> /
-                                <span class="badge badge-success">Laravel 5.X</span> /
-                                <span class="badge badge-primary">JavaScript</span> /
-                                <span class="badge badge-primary">JQuery</span> /
-                                <span class="badge badge-success">Html</span> /
-                                <span class="badge badge-success">Css</span> /
-                                <span class="badge badge-primary">Scss/Sass</span> /
-                                <span class="badge badge-primary">MySql</span> /
-                                <span class="badge badge-primary">Bootstrap 4</span>
-                            </p>
-                            <p>Technologies: <span class="badge badge-success">Git</span> /
-                                <span class="badge badge-primary">Linux Cmd</span> /
-                                <span class="badge badge-success">PhpStorm</span> /
-                                <span class="badge badge-primary">Composer</span> /
-                                <span class="badge badge-primary">NPM</span>
-                            </p>
+        <div class="container">
+            <div class="row py-5">
+                <div class="col-lg-3 border border-left-0 border-top-0 border-bottom-0 border-primary justify-content-center d-flex">
+                    <div class="icon-bg icon-avatar align-self-center"></div>
+                </div>
+                <div class="col-lg-9 pl-5">
+                    <p class="h3">Hello, my name is Victor!</p>
+                    <p class="ml-3">
+                        I'm a 19yo web-developer, student of National Technical University "Kharkiv Polytechnic Institute" since 2015. Currently living in Kharkiv. Programming for 4 years, mostly on C#. Switched to web-development a year ago.
+                    </p>
+                    <p>
+                        Current postion: <b>ABC Hosting Company Ltd</b> since 21.11.2016
+                    </p>
+                    <p>Skills: <span class="badge badge-success">Php 7.X</span> /
+                        <span class="badge badge-success">Laravel 5.X</span> /
+                        <span class="badge badge-primary">JavaScript</span> /
+                        <span class="badge badge-primary">JQuery</span> /
+                        <span class="badge badge-success">Html</span> /
+                        <span class="badge badge-success">Css</span> /
+                        <span class="badge badge-primary">Scss/Sass</span> /
+                        <span class="badge badge-primary">MySql</span> /
+                        <span class="badge badge-primary">Bootstrap 4</span>
+                    </p>
+                    <p>Technologies: <span class="badge badge-success">Git</span> /
+                        <span class="badge badge-primary">Linux Cmd</span> /
+                        <span class="badge badge-success">PhpStorm</span> /
+                        <span class="badge badge-primary">Composer</span> /
+                        <span class="badge badge-primary">NPM</span>
+                    </p>
 
-                            <p>Languages: <span class="badge badge-success">Russian(native)</span> /
-                                <span class="badge badge-success">Ukrainian(fluent)</span> /
-                                <span class="badge badge-primary">English(Intermediate)</span>
-                            </p>
+                    <p>Languages: <span class="badge badge-success">Russian(native)</span> /
+                        <span class="badge badge-success">Ukrainian(fluent)</span> /
+                        <span class="badge badge-primary">English(Intermediate)</span>
+                    </p>
 
-                            <p>I am interested in improving of my own skills and discovering new technologies</p>
-                        </div>
-                    </div>
+                    <p>I am interested in improving of my own skills and discovering new technologies</p>
                 </div>
             </div>
+        </div>
+    </div>
+    <div id="source">
+        <div class="container">
             <div class="row">
-                <div class="card text-center fill-horizontal rounded-0">
-                    <div class="card-header card-footer">
-                        Projects
-                    </div>
-                </div>
+                <a href="https://github.com/22116" class="undecorated m-auto text-center" target="_blank">
+                    <h3 class="border-0 text-info">GitHub</h3>
+                    <h4 class="text-white">Click here to find out more interesting things.</h4>
+                </a>
             </div>
-            <div id="projects" class="row">
+        </div>
+    </div>
+    <div id="contacts"  class="bg-info">
+        <div class="container text-center py-5 text-white">
+            <div class="row">
+                <h3 class="mx-auto mb-5">Social medias</h3>
+            </div>
+            <div class="row text-center">
                 <div class="col">
-                    <div class="row">
-                        <div class="col-lg-4 p-0">
-                            <a href="/university" class="card rounded-0 border-0 fill-vertical">
-                                <div class="card-body">
-                                    <h4 class="card-title">University</h4>
-                                    <p class="card-text">Internal project with lessons\lab factories.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 p-0">
-                            <a href="http://numerical-method.fedorenko.zzz.com.ua/" class="card rounded-0 border-0 fill-vertical">
-                                <div class="card-body">
-                                    <h4 class="card-title">Numerical Methods</h4>
-                                    <p class="card-text">Convient and fresh site with some typicall tasks and examples.</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="col-lg-4 p-0">
-                            <a href="http://taskman.adr.com.ua/" class="card rounded-0 border-0">
-                                <div class="card-body">
-                                    <h4 class="card-title">Taskman</h4>
-                                    <p class="card-text">Small tasker with opportunity everyone to add their own issues and editing them in admin panel(admin/admin).</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                    <a href="https://www.linkedin.com/in/victor-fedorenko-43b384139/" class="icon icon-ln mx-auto"></a>
+                    <h4 class="mt-2">LinkIn</h4>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col p-0">
-                    <div class="card text-center fill-horizontal rounded-0">
-                        <div class="card-header">
-                            Sources
-                        </div>
-                        <a href="https://github.com/22116" class="card-body undecorated" target="_blank">
-                            <h4 class="card-title">GitHub</h4>
-                            <p class="card-text">Click here to find out more interesting things.</p>
-                        </a>
-                    </div>
+                <div class="col">
+                    <a href="http://telegram.me/fedorenko22116" class="icon icon-tm mx-auto"></a>
+                    <h4 class="mt-2">Telegram</h4>
                 </div>
-            </div>
-            <div class="row">
-                <div class="card text-center fill-horizontal rounded-0">
-                    <div class="card-header">
-                        Social medias
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col">
-                                <a href="https://www.linkedin.com/in/victor-fedorenko-43b384139/" class="icon icon-ln"></a>
-                                <h4>LinkIn</h4>
-                            </div>
-                            <div class="col">
-                                <a href="http://telegram.me/fedorenko22116" class="icon icon-tm"></a>
-                                <h4>Telegram</h4>
-                            </div>
-                            <div class="col">
-                                <a href="https://www.facebook.com/viktor.fedorenko.37" class="icon icon-fb"></a>
-                                <h4>Facebook</h4>
-                            </div>
-                            <div class="col">
-                                <a href="https://habrahabr.ru/users/22116/" class="icon icon-hb"></a>
-                                <h4>Habrahabr</h4>
-                            </div>
-                            <div class="col">
-                                <a href="mailto:fedorenko22116@gmail.com" class="icon icon-ml"></a>
-                                <h4>Mail</h4>
-                            </div>
-                        </div>
-                    </div>
+                <div class="col">
+                    <a href="https://www.facebook.com/viktor.fedorenko.37" class="icon icon-fb mx-auto"></a>
+                    <h4 class="mt-2">Facebook</h4>
+                </div>
+                <div class="col">
+                    <a href="https://habrahabr.ru/users/22116/" class="icon icon-hb mx-auto"></a>
+                    <h4 class="mt-2">Habrahabr</h4>
+                </div>
+                <div class="col">
+                    <a href="mailto:fedorenko22116@gmail.com" class="icon icon-ml mx-auto"></a>
+                    <h4 class="mt-2">Mail</h4>
                 </div>
             </div>
         </div>

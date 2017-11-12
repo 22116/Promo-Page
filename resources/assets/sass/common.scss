@@ -1,25 +1,23 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import "~bootstrap/scss/_variables.scss";
+
 $bgMain: url("../../images/bg_header.jpg") repeat fixed;
 $bgMainMobile: url("../../images/bg_header.jpg") repeat 100%;
 
-html {
-     font-family: Roboto, sans-serif !important;
+body {
+     font-family: Roboto, sans-serif!important;
 }
 
-.fill-horizontal {
-     width: 100%;
-}
-.fill-vertical {
-     height: 100%;
-}
 .content {
      min-height: calc(100vh - 88px);
 }
 
 .undecorated {
      text-decoration: none;
-}
-.undecorated:hover {
-     text-decoration: none;
+
+     &:hover {
+          text-decoration: none;
+     }
 }
 
 .wrapper-clear {
@@ -51,6 +49,11 @@ html {
           background-size: 100% 100%;
           z-index: -2;
 
+          @media screen and (max-device-width: map-get($grid-breakpoints, 'sm')){
+               background: $bgMain;
+               height: 400px;
+          }
+
           .fg-promo {
                position: fixed;
                background: url("../../images/promo_fg.png") no-repeat;
@@ -58,42 +61,80 @@ html {
                background-size: 100% 100%;
                height: inherit;
                width: 100%;
+
+               @media screen and (max-device-width: map-get($grid-breakpoints, 'sm')){
+                    display: none;
+               }
           }
           .container-fluid {
                position: fixed;
                height: inherit;
 
-               .h1 {
-                    font-family: Roboto, sans-serif;
+               h1 {
                     border-bottom: 1px solid white;
                     display: block;
                     font-size: 64pt;
-                    font-weight: 200;
+                    font-weight: 100;
+
+                    @media screen and (max-device-width: map-get($grid-breakpoints, 'sm')){
+                         font-size: 24pt;
+                    }
                }
 
-               .h4 {
+               h4 {
                     font-weight: 100;
                }
           }
      }
 
      #skills {
-          z-index: 100;
-          min-height: 100vh;
-          //box-shadow: 10px 10px 5px grey;
+          display: block;
+          box-shadow: 10px 10px grey;
+
+          #projects {
+               a {
+                    color: black;
+                    transition: background-color 0.2s;
+               }
+               a:hover {
+                    text-decoration: none;
+                    background-color: aliceblue;
+                    transition: background-color 0.2s;
+               }
+          }
      }
 
-     #projects {
-          a {
-               color: black;
-               transition: background-color 0.2s;
-          }
-          a:hover {
-               text-decoration: none;
-               background-color: aliceblue;
-               transition: background-color 0.2s;
+     #source {
+          background: #00b3ee url("../../images/gh_code.jpg") no-repeat fixed;
+          background-size: cover;
+
+          .container {
+               padding: 100px 0;
+
+               h3 {
+                    border-bottom: 1px solid white;
+                    display: block;
+                    font-size: 28pt;
+                    font-weight: 100;
+               }
+               h4 {
+                    font-weight: 100;
+               }
           }
      }
+
+     #contacts {
+          h3 {
+               border-bottom: 1px solid white;
+               display: block;
+               font-size: 28pt;
+               font-weight: 100;
+          }
+          h4 {
+               font-weight: 100;
+          }
+     }
+
 
      #particles-js {
           position: fixed;
@@ -107,8 +148,8 @@ html {
 }
 
 .icon {
+     background-color: #fff;
      display: block;
-     margin: 0 auto;
      width: 90px;
      height: 90px;
      border: 4px solid white;
@@ -148,11 +189,4 @@ html {
 
 .icon-ml {
      background-image: url("../../images/icon_ml.png");
-}
-
-@media screen and (max-device-width: 800px) {
-     #header, .wrapper-home {
-          background: $bgMainMobile;
-          background-position-y: 0;
-     }
 }
