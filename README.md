@@ -1,2 +1,2 @@
 # main
-Project to intoduce myself.
+Visit card.
